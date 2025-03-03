@@ -1,0 +1,35 @@
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\BusinessLayer.deps.json
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\Business.EA331CBA.Up2Date
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\BusinessLayer.deps.json
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.AssemblyInfo.cs
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.sourcelink.json
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\Business.EA331CBA.Up2Date
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\refint\BusinessLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\BusinessLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\BusinessLayer\obj\Debug\net6.0\ref\BusinessLayer.dll
