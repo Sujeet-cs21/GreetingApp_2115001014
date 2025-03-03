@@ -1,8 +1,13 @@
+using BusinessLayer.Interface;
+using BusinessLayer.Service;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 
 //Add Swagger to the container
 builder.Services.AddEndpointsApiExplorer();
