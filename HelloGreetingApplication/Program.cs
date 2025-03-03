@@ -1,5 +1,10 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using NLog;
+using NLog.Web;
+
+var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+logger.Info("Application Starting...");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IGreetingBL, GreetingBL>();
+
+builder.Logging.ClearProviders();
+builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+builder.Host.UseNLog();
 
 //Add Swagger to the container
 builder.Services.AddEndpointsApiExplorer();
