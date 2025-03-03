@@ -1,0 +1,31 @@
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.AssemblyReference.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\Reposito.A0A61804.Up2Date
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\New folder\HelloGreetingApplication\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.deps.json
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\bin\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\bin\Debug\net6.0\ModelLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\bin\Debug\net6.0\ModelLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.AssemblyReference.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfoInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.AssemblyInfo.cs
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.csproj.CoreCompileInputs.cache
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.sourcelink.json
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\Reposito.A0A61804.Up2Date
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\refint\RepositoryLayer.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\RepositoryLayer.pdb
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\RepositoryLayer\obj\Debug\net6.0\ref\RepositoryLayer.dll
