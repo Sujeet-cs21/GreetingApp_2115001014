@@ -78,3 +78,7 @@ C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\obj\Debug\ne
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.pdb
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.genruntimeconfig.cache
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\obj\Debug\net6.0\ref\HelloGreetingApplication.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\nlog.config
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\NLog.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

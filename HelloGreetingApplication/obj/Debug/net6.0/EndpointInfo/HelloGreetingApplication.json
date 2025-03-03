@@ -120,11 +120,11 @@
       "RequestModel": {
         "type": "object",
         "properties": {
-          "key": {
+          "firstName": {
             "type": "string",
             "nullable": true
           },
-          "value": {
+          "lastName": {
             "type": "string",
             "nullable": true
           }
