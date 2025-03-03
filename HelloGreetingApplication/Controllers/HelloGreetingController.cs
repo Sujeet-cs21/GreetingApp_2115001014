@@ -1,3 +1,4 @@
+using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 
@@ -10,10 +11,16 @@ namespace HelloGreetingApplication.Controllers;
 [Route("[controller]")]
 public class HelloGreetingController : ControllerBase
 {
+    IGreetingBL _greetingBL;
+    public HelloGreetingController(IGreetingBL greetingBL)
+    {
+        _greetingBL = greetingBL;
+    }
+
     /// <summary>
     /// Get Method to get the Greeting Message
     /// </summary>
-    /// <returns>"Hello World!"</returns>
+    /// <returns>"Greeting from GreetingBL"</returns>
     [HttpGet]
     public IActionResult Get()
     {
@@ -21,7 +28,7 @@ public class HelloGreetingController : ControllerBase
 
         responseModel.Success = true;
         responseModel.Message = "Hello from Greeting App API Endpoint";
-        responseModel.Data = "Hello World";
+        responseModel.Data = _greetingBL.GetGreeting();
         return Ok(responseModel);
     }
 
