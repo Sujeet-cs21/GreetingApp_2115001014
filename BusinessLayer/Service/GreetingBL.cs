@@ -1,11 +1,20 @@
 ﻿using BusinessLayer.Interface;
+using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Interface;
 
 namespace BusinessLayer.Service
 {
     public class GreetingBL : IGreetingBL
     {
+        private readonly IGreetingRL _greetingRL;
         private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
+
+        public GreetingBL(IGreetingRL greetingRL)
+        {
+            _greetingRL = greetingRL;
+        }
         public string GetGreeting(string firstName, string lastName)
         {
             try
@@ -39,6 +48,20 @@ namespace BusinessLayer.Service
             catch (System.Exception e)
             {
                 logger.Error(e, "An error occurred in GetGreeting method");
+                throw;
+            }
+        }
+
+        public GreetingEntity AddGreeting(GreetingModel greeting)
+        {
+            try
+            {
+                logger.Info("Business Layer - AddGreeting method started.");
+                return _greetingRL.AddGreeting(greeting);
+            }
+            catch (System.Exception e)
+            {
+                logger.Error(e, "Business Layer - Error occurred in AddGreeting method.");
                 throw;
             }
         }

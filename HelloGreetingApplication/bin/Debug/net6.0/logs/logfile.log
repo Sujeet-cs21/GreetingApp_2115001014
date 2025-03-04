@@ -53,3 +53,89 @@
 2025-03-04 01:01:36.3810 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.Post (HelloGreetingApplication) in 56.9543ms 
 2025-03-04 01:01:36.3810 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.Post (HelloGreetingApplication)' 
 2025-03-04 01:01:36.3810 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7210/HelloGreeting application/json 50 - 200 - application/json;+charset=utf-8 86.8128ms 
+2025-03-04 21:37:32.9303 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-04 21:43:54.5025 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-04 21:43:55.6484 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 21:44:20.4618 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-04 21:44:21.4253 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 21:44:22.4726 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (358ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [HelloGreeting]; 
+2025-03-04 21:44:22.5980 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [HelloGreeting] SET READ_COMMITTED_SNAPSHOT ON;
+END; 
+2025-03-04 21:44:22.6302 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-04 21:44:22.7921 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); 
+2025-03-04 21:44:22.7921 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 
+2025-03-04 21:44:22.8241 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (21ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); 
+2025-03-04 21:44:22.8483 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; 
+2025-03-04 21:44:22.8714 | INFO | Microsoft.EntityFrameworkCore.Migrations | Applying migration '20250304161355_Initial'. 
+2025-03-04 21:44:22.9066 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Greetings] (
+    [Id] int NOT NULL IDENTITY,
+    [Greeting] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Greetings] PRIMARY KEY ([Id])
+); 
+2025-03-04 21:44:22.9232 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250304161355_Initial', N'6.0.36'); 
+2025-03-04 23:09:00.1747 | INFO | HelloGreetingApplication.Program | Application Starting... 
+2025-03-04 23:09:02.0820 | INFO | Microsoft.Hosting.Lifetime | Now listening on: https://localhost:7210 
+2025-03-04 23:09:02.0982 | INFO | Microsoft.Hosting.Lifetime | Now listening on: http://localhost:5224 
+2025-03-04 23:09:02.2706 | INFO | Microsoft.Hosting.Lifetime | Application started. Press Ctrl+C to shut down. 
+2025-03-04 23:09:02.2706 | INFO | Microsoft.Hosting.Lifetime | Hosting environment: Development 
+2025-03-04 23:09:02.2706 | INFO | Microsoft.Hosting.Lifetime | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ 
+2025-03-04 23:09:06.1177 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - 
+2025-03-04 23:09:06.5782 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 200 - text/html;charset=utf-8 465.3054ms 
+2025-03-04 23:09:06.6049 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - 
+2025-03-04 23:09:06.6049 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.css - - 
+2025-03-04 23:09:06.6049 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - 
+2025-03-04 23:09:06.6049 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - 
+2025-03-04 23:09:06.6049 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - 
+2025-03-04 23:09:06.6244 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.js - - 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 36.6064ms 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 57.6162ms 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui-standalone-preset.js was not modified 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui-bundle.js was not modified 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /index.css was not modified 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware | The file /swagger-ui.css was not modified 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - - 304 - text/css 65.6529ms 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 64.3067ms 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.css - - - 304 - text/css 64.2829ms 
+2025-03-04 23:09:06.6599 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 63.5359ms 
+2025-03-04 23:09:06.8657 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - - 
+2025-03-04 23:09:07.1712 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 305.4664ms 
+2025-03-04 23:09:07.6988 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 GET https://localhost:7210/Swagger/v1/swagger.json - - 
+2025-03-04 23:09:07.7052 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 GET https://localhost:7210/Swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 6.4748ms 
+2025-03-04 23:10:29.8106 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request starting HTTP/2 POST https://localhost:7210/HelloGreeting/Add application/json 36 
+2025-03-04 23:10:29.8462 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.AddGreeting (HelloGreetingApplication)' 
+2025-03-04 23:10:29.8786 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Route matched with {action = "AddGreeting", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult AddGreeting(ModelLayer.Model.GreetingModel) on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). 
+2025-03-04 23:10:30.2438 | INFO | HelloGreetingApplication.Controllers.HelloGreetingController | POST request received at /HelloGreeting/Add 
+2025-03-04 23:10:30.2438 | INFO | BusinessLayer.Service.GreetingBL | Business Layer - AddGreeting method started. 
+2025-03-04 23:10:30.2438 | INFO | RepositoryLayer.Service.GreetingRL | Repository Layer - AddGreeting method started. 
+2025-03-04 23:10:30.8947 | INFO | Microsoft.EntityFrameworkCore.Infrastructure | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None 
+2025-03-04 23:10:32.0035 | INFO | Microsoft.EntityFrameworkCore.Database.Command | Executed DbCommand (139ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Greetings] ([Greeting])
+VALUES (@p0);
+SELECT [Id]
+FROM [Greetings]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); 
+2025-03-04 23:10:32.0963 | INFO | RepositoryLayer.Service.GreetingRL | Repository Layer - Greeting added successfully. 
+2025-03-04 23:10:32.0963 | INFO | HelloGreetingApplication.Controllers.HelloGreetingController | POST request processed successfully 
+2025-03-04 23:10:32.0963 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor | Executing CreatedResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[RepositoryLayer.Entity.GreetingEntity, RepositoryLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'. 
+2025-03-04 23:10:32.1141 | INFO | Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.AddGreeting (HelloGreetingApplication) in 2230.6602ms 
+2025-03-04 23:10:32.1141 | INFO | Microsoft.AspNetCore.Routing.EndpointMiddleware | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.AddGreeting (HelloGreetingApplication)' 
+2025-03-04 23:10:32.1261 | INFO | Microsoft.AspNetCore.Hosting.Diagnostics | Request finished HTTP/2 POST https://localhost:7210/HelloGreeting/Add application/json 36 - 201 - application/json;+charset=utf-8 2315.5027ms 
