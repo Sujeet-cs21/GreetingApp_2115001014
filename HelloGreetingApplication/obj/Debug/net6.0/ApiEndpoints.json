@@ -82,5 +82,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "FindGeetingById",
+    "RelativePath": "HelloGreeting/FindById",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "findById",
+        "Type": "ModelLayer.Model.FindByIdGreetingModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
