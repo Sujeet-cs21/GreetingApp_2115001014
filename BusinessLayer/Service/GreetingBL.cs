@@ -82,5 +82,19 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public List<GreetingEntity> GetAllGreetings()
+        {
+            try
+            {
+                logger.Info("Business Layer - GetAllGreetings method started.");
+                return _greetingRL.GetAllGreetings();
+            }
+            catch (System.Exception e)
+            {
+                logger.Error(e, "Business Layer - Error occurred in GetAllGreetings method.");
+                throw;
+            }
+        }
     }
 }
