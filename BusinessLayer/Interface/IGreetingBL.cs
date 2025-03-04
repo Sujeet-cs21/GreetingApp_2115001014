@@ -7,5 +7,6 @@ namespace BusinessLayer.Interface
     {
         string GetGreeting(string firstname,string lastName);
         GreetingEntity AddGreeting(GreetingModel greeting);
+        GreetingResponseModel FindGreetingById(FindByIdGreetingModel findByIdGreetingModel);
     }
 }

@@ -22,3 +22,7 @@
 ### UC4
     -Updated the Greeting App to save the Greeting Message in the Repository.
     -Created new branch UC5
+
+### UC5
+    -Updated the Greeting App to find a Greeting Message by Id in the Repository.
+    -Created new branch UC6

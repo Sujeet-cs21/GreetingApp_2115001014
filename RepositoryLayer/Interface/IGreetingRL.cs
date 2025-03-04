@@ -6,5 +6,6 @@ namespace RepositoryLayer.Interface
     public interface IGreetingRL
     {
         GreetingEntity AddGreeting(GreetingModel greeting);
+        GreetingEntity FindGreetingById(FindByIdGreetingModel findByIdGreetingModel);
     }
 }

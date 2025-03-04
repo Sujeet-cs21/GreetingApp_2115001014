@@ -112,6 +112,39 @@ public class HelloGreetingController : ControllerBase
     }
 
     /// <summary>
+    /// Get Method to Find Greeting by Id
+    /// </summary>
+    /// <param name="findById"></param>
+    /// <returns>"GreetingResposeModel"</returns>
+    [HttpPost("FindById")]
+    public IActionResult FindGeetingById([FromBody]FindByIdGreetingModel findById)
+    {
+        try
+        {
+            logger.Info("GET request received at /HelloGreeting/FindById");
+            var greeting = _greetingBL.FindGreetingById(findById);
+            if (greeting == null)
+            {
+                logger.Error("Greeting not found");
+                return NotFound("Greeting not found");
+            }
+            var response = new ResponseModel<GreetingResponseModel>
+            {
+                Success = true,
+                Message = "Greeting found successfully",
+                Data = greeting
+            };
+            logger.Info("GET request processed successfully");
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, "Error occurred in GET method");
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+
+    /// <summary>
     /// Put Method to Update the Greeting Message
     /// </summary>
     /// <param name="requestModel">RequestModel</param>

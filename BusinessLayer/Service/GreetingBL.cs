@@ -65,5 +65,22 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public GreetingResponseModel FindGreetingById(FindByIdGreetingModel findByIdGreetingModel)
+        {
+            try
+            {
+                logger.Info("Business Layer - FindGreetingById method started.");
+                var result = _greetingRL.FindGreetingById(findByIdGreetingModel);
+
+                logger.Info("Business Layer - Greeting found successfully.");
+                return new GreetingResponseModel { Id = result.Id, Greeting = result.Greeting };
+            }
+            catch (System.Exception e)
+            {
+                logger.Error(e, "Business Layer - Error occurred in FindGreetingById method.");
+                throw;
+            }
+        }
     }
 }
