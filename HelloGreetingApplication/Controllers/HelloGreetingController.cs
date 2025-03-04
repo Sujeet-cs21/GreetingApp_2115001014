@@ -145,6 +145,38 @@ public class HelloGreetingController : ControllerBase
     }
 
     /// <summary>
+    /// Get Method to Get All Greetings
+    /// </summary>
+    /// <returns>"All Greetings"</returns>
+    [HttpGet("GetAll")]
+    public IActionResult GetAllGreeting()
+    {
+        try
+        {
+            logger.Info("GET request received at /HelloGreeting/GetAll");
+            var greetings = _greetingBL.GetAllGreetings();
+            if (greetings == null)
+            {
+                logger.Error("Greetings not found");
+                return NotFound("Greetings not found");
+            }
+            var response = new ResponseModel<List<GreetingEntity>>
+            {
+                Success = true,
+                Message = "Greetings found successfully",
+                Data = greetings
+            };
+            logger.Info("GET request processed successfully");
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, "Error occurred in GET method");
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+
+    /// <summary>
     /// Put Method to Update the Greeting Message
     /// </summary>
     /// <param name="requestModel">RequestModel</param>

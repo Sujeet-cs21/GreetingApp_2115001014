@@ -56,5 +56,26 @@ namespace RepositoryLayer.Service
                 throw new Exception();
             }
         }
+
+        public List<GreetingEntity> GetAllGreetings()
+        {
+            try
+            {
+                logger.Info("Repository Layer - GetAllGreetings method started.");
+                var greetings = _context.Greetings.ToList();
+                if (greetings.Count == 0)
+                {
+                    logger.Error("Repository Layer - No greetings found.");
+                    throw new Exception();
+                }
+                logger.Info("Repository Layer - Greetings found successfully.");
+                return greetings;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e, "Repository Layer - Error occurred in GetAllGreetings method.");
+                throw new Exception();
+            }
+        }
     }
 }
