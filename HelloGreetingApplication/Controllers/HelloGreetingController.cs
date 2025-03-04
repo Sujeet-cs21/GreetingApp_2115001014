@@ -2,6 +2,7 @@ using BusinessLayer.Interface;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
+using RepositoryLayer.Entity;
 
 namespace HelloGreetingApplication.Controllers;
 
@@ -73,6 +74,39 @@ public class HelloGreetingController : ControllerBase
         catch (Exception ex)
         {
             logger.Error(ex, "Error occurred in POST method");
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+
+    /// <summary>
+    /// Post Method to Add Greeting
+    /// </summary>
+    /// <param name="greetingModel"></param>
+    /// <returns>"Greeting Added"</returns>
+    [HttpPost("Add")]
+    public IActionResult AddGreeting([FromBody] GreetingModel greetingModel)
+    {
+        try
+        {
+            logger.Info("POST request received at /HelloGreeting/Add");
+            if(greetingModel == null)
+            {
+                logger.Error("GreetingModel is null");
+                return BadRequest("GreetingModel is null");
+            }
+            var greeting = _greetingBL.AddGreeting(greetingModel);
+            var response = new ResponseModel<GreetingEntity>
+            {
+                Success = true,
+                Message = "Greeting added successfully",
+                Data = greeting
+            };
+            logger.Info("POST request processed successfully");
+            return Created("Greeting Added", response);
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, "Error occurred in POST method");
             return StatusCode(500, "Internal Server Error");
         }
     }
