@@ -85,6 +85,22 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "EditGreeting",
+    "RelativePath": "HelloGreeting/Edit",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reqModel",
+        "Type": "ModelLayer.Model.GreetingReqModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "FindGeetingById",
     "RelativePath": "HelloGreeting/FindById",
     "HttpMethod": "POST",

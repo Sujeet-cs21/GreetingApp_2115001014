@@ -30,3 +30,7 @@
 ### UC6
     -Updated the Greeting App to List all the Greeting Messages in the Repository
     -Created new branch UC7
+
+### UC7
+    -Updated the Greeting App to Edit a Greeting Messages in the Repository.
+    -Created new branch UC8
