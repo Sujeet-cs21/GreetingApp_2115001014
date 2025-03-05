@@ -240,6 +240,34 @@ public class HelloGreetingController : ControllerBase
         }
     }
 
+    [HttpPatch("Edit")]
+    public IActionResult EditGreeting([FromBody] GreetingReqModel reqModel)
+    {
+        try
+        {
+            logger.Info("PATCH request received at /HelloGreeting/Edit");
+            if (reqModel == null)
+            {
+                logger.Error("GreetingReqModel is null");
+                return BadRequest("GreetingReqModel is null");
+            }
+            var greeting = _greetingBL.EditGreeting(reqModel);
+            var response = new ResponseModel<GreetingEntity>
+            {
+                Success = true,
+                Message = "Greeting edited successfully",
+                Data = greeting
+            };
+            logger.Info("PATCH request processed successfully");
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, "Error occurred in PATCH method");
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+
     /// <summary>
     /// Delete Method to Delete the Greeting Message
     /// </summary>

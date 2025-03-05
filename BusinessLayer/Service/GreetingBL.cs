@@ -96,5 +96,19 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public GreetingEntity EditGreeting(GreetingReqModel reqModel)
+        {
+            try
+            {
+                logger.Info("Business Layer - EditGreeting method started.");
+                return _greetingRL.EditGreeting(reqModel);
+            }
+            catch (System.Exception e)
+            {
+                logger.Error(e, "Business Layer - Error occurred in EditGreeting method.");
+                throw;
+            }
+        }
     }
 }

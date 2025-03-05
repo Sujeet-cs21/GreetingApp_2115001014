@@ -77,5 +77,28 @@ namespace RepositoryLayer.Service
                 throw new Exception();
             }
         }
+
+        public GreetingEntity EditGreeting(GreetingReqModel reqModel)
+        {
+            try
+            {
+                logger.Info("Repository Layer - EditGreeting method started.");
+                GreetingEntity greetingEntity = _context.Greetings.Find(reqModel.Id);
+                if (greetingEntity == null)
+                {
+                    logger.Error("Repository Layer - Greeting not found.");
+                    throw new Exception();
+                }
+                greetingEntity.Greeting = reqModel.GreetMessage;
+                _context.SaveChanges();
+                logger.Info("Repository Layer - Greeting editeded successfully.");
+                return greetingEntity;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e, "Repository Layer - Error occurred in EditGreeting method.");
+                throw new Exception();
+            }
+        }
     }
 }
