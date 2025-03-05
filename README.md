@@ -34,3 +34,7 @@
 ### UC7
     -Updated the Greeting App to Edit a Greeting Messages in the Repository.
     -Created new branch UC8
+
+### UC8
+    -Updated the Greeting App to Delete a Greeting Messages from the Repository.
+    -All UseCases are implemented Successfully.

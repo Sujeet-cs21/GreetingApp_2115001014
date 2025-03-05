@@ -100,5 +100,28 @@ namespace RepositoryLayer.Service
                 throw new Exception();
             }
         }
+
+        public GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel)
+        {
+            try
+            {
+                logger.Info("Repository Layer - DeleteGreeting method started.");
+                GreetingEntity greetingEntity = _context.Greetings.Find(findByIdGreetingModel.Id);
+                if (greetingEntity == null)
+                {
+                    logger.Error("Repository Layer - Greeting not found.");
+                    throw new Exception();
+                }
+                _context.Greetings.Remove(greetingEntity);
+                _context.SaveChanges();
+                logger.Info("Repository Layer - Greeting deleted successfully.");
+                return greetingEntity;
+            }
+            catch (Exception e)
+            {
+                logger.Error(e, "Repository Layer - Error occurred in DeleteGreeting method.");
+                throw new Exception();
+            }
+        }
     }
 }

@@ -85,6 +85,22 @@
   },
   {
     "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
+    "Method": "DeleteGreeting",
+    "RelativePath": "HelloGreeting/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "findById",
+        "Type": "ModelLayer.Model.FindByIdGreetingModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HelloGreetingApplication.Controllers.HelloGreetingController",
     "Method": "EditGreeting",
     "RelativePath": "HelloGreeting/Edit",
     "HttpMethod": "PATCH",

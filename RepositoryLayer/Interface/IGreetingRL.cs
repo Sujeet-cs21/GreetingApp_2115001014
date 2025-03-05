@@ -9,5 +9,6 @@ namespace RepositoryLayer.Interface
         GreetingEntity FindGreetingById(FindByIdGreetingModel findByIdGreetingModel);
         List<GreetingEntity> GetAllGreetings();
         GreetingEntity EditGreeting(GreetingReqModel reqModel );
+        GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel);
     }
 }
