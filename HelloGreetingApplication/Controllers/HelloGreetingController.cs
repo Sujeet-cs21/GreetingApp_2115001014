@@ -240,6 +240,11 @@ public class HelloGreetingController : ControllerBase
         }
     }
 
+    /// <summary>
+    /// Patch Method to Edit the Greeting Message
+    /// </summary>
+    /// <param name="reqModel"></param>
+    /// <returns>"Edited Successfully"</returns>
     [HttpPatch("Edit")]
     public IActionResult EditGreeting([FromBody] GreetingReqModel reqModel)
     {
@@ -292,6 +297,39 @@ public class HelloGreetingController : ControllerBase
         catch (Exception ex)
         {
             logger.Error(ex, "Error occurred in DELETE method");
+            return StatusCode(500, "Internal Server Error");
+        }
+    }
+
+    /// <summary>
+    /// Delete Method to Delete the Greeting Message
+    /// </summary>
+    /// <param name="findById"></param>
+    /// <returns>"Greeting Deleted Successfully"</returns>
+    [HttpDelete("Delete")]
+    public IActionResult DeleteGreeting([FromBody] FindByIdGreetingModel findById)
+    {
+        try
+        {
+            logger.Info("DELETE request received at /HelloGreeting/Delete");
+            if (findById == null)
+            {
+                logger.Error("FindByIdGreetingModel is null");
+                return BadRequest("FindByIdGreetingModel is null");
+            }
+            var greeting = _greetingBL.DeleteGreeting(findById);
+            var response = new ResponseModel<GreetingEntity>
+            {
+                Success = true,
+                Message = "Greeting deleted successfully",
+                Data = greeting
+            };
+            logger.Info("DELETE request processed successfully");
+            return Ok(response);
+        }
+        catch (Exception e)
+        {
+            logger.Error(e, "Error occurred in DELETE method");
             return StatusCode(500, "Internal Server Error");
         }
     }

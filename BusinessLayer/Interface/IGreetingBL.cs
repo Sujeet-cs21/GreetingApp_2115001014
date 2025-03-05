@@ -10,5 +10,6 @@ namespace BusinessLayer.Interface
         GreetingResponseModel FindGreetingById(FindByIdGreetingModel findByIdGreetingModel);
         List<GreetingEntity> GetAllGreetings();
         GreetingEntity EditGreeting(GreetingReqModel reqModel);
+        GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel);
     }
 }

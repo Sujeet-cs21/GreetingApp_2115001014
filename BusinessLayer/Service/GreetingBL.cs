@@ -110,5 +110,19 @@ namespace BusinessLayer.Service
                 throw;
             }
         }
+
+        public GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel)
+        {
+            try
+            {
+                logger.Info("Business Layer - DeleteGreeting method started.");
+                return _greetingRL.DeleteGreeting(findByIdGreetingModel);
+            }
+            catch (System.Exception e)
+            {
+                logger.Error(e, "Business Layer - Error occurred in DeleteGreeting method.");
+                throw;
+            }
+        }
     }
 }
