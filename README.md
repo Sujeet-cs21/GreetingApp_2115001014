@@ -37,4 +37,8 @@
 
 ### UC8
     -Updated the Greeting App to Delete a Greeting Messages from the Repository.
-    -All UseCases are implemented Successfully.
+    -Created new branch UC9
+
+### UC9
+    -Applied Global Exception and Swagger to the Greeting App.
+    -Created new branch UC10
