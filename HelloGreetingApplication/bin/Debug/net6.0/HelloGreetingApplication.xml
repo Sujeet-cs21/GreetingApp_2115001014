@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelloGreetingApplication</name>
+    </assembly>
+    <members>
+        <member name="T:HelloGreetingApplication.Controllers.HelloGreetingController">
+            <summary>
+            This Class is used to create API Endpoints for Greeting App
+            </summary>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Get">
+            <summary>
+            Get Method to get the Greeting Message
+            </summary>
+            <returns>"Greeting from GreetingBL"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Post(ModelLayer.Model.RequestModel)">
+            <summary>
+            Post Method to Post the Greeting Message
+            </summary>
+            <param name="requestModel">RequestModel</param>
+            <returns>"Greeting from GreetingBL"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.AddGreeting(ModelLayer.Model.GreetingModel)">
+            <summary>
+            Post Method to Add Greeting
+            </summary>
+            <param name="greetingModel"></param>
+            <returns>"Greeting Added"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.FindGeetingById(ModelLayer.Model.FindByIdGreetingModel)">
+            <summary>
+            Get Method to Find Greeting by Id
+            </summary>
+            <param name="findById"></param>
+            <returns>"GreetingResposeModel"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.GetAllGreeting">
+            <summary>
+            Get Method to Get All Greetings
+            </summary>
+            <returns>"All Greetings"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Put(ModelLayer.Model.RequestModel)">
+            <summary>
+            Put Method to Update the Greeting Message
+            </summary>
+            <param name="requestModel">RequestModel</param>
+            <returns>"Response Model"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Patch(ModelLayer.Model.RequestModel)">
+            <summary>
+            Patch Method to Update the Greeting Message
+            </summary>
+            <param name="requestModel">RequestModel</param>
+            <returns>"Response Model"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.EditGreeting(ModelLayer.Model.GreetingReqModel)">
+            <summary>
+            Patch Method to Edit the Greeting Message
+            </summary>
+            <param name="reqModel"></param>
+            <returns>"Edited Successfully"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.Delete">
+            <summary>
+            Delete Method to Delete the Greeting Message
+            </summary>
+            <returns>"Deleted Successfully"</returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.HelloGreetingController.DeleteGreeting(ModelLayer.Model.FindByIdGreetingModel)">
+            <summary>
+            Delete Method to Delete the Greeting Message
+            </summary>
+            <param name="findById"></param>
+            <returns>"Greeting Deleted Successfully"</returns>
+        </member>
+    </members>
+</doc>
