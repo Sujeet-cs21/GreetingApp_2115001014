@@ -29,24 +29,14 @@ public class HelloGreetingController : ControllerBase
     public IActionResult Get()
     {
         logger.Info("GET request received at /HelloGreeting");
-
-        try
+        ResponseModel<string> responseModel = new ResponseModel<string>
         {
-            ResponseModel<string> responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Hello from Greeting App API Endpoint",
-                Data = _greetingBL.GetGreeting("", "")
-            };
-
-            logger.Info("GET request processed successfully");
-            return Ok(responseModel);
-        }
-        catch (Exception ex)
-        {
-            logger.Error(ex, "Error occurred in GET method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Hello from Greeting App API Endpoint",
+            Data = _greetingBL.GetGreeting("", "")
+        };
+        logger.Info("GET request processed successfully");
+        return Ok(responseModel);
     }
 
     /// <summary>
@@ -59,23 +49,15 @@ public class HelloGreetingController : ControllerBase
     {
         logger.Info($"POST request received with FirstName={requestModel.FirstName}, LastName={requestModel.LastName}");
 
-        try
+        ResponseModel<string> responseModel = new ResponseModel<string>
         {
-            ResponseModel<string> responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Request received successfully",
-                Data = _greetingBL.GetGreeting(requestModel.FirstName, requestModel.LastName)
-            };
+            Success = true,
+            Message = "Request received successfully",
+            Data = _greetingBL.GetGreeting(requestModel.FirstName, requestModel.LastName)
+        };
 
-            logger.Info("POST request processed successfully");
-            return Ok(responseModel);
-        }
-        catch (Exception ex)
-        {
-            logger.Error(ex, "Error occurred in POST method");
-            return StatusCode(500, "Internal Server Error");
-        }
+        logger.Info("POST request processed successfully");
+        return Ok(responseModel);
     }
 
     /// <summary>
@@ -86,29 +68,21 @@ public class HelloGreetingController : ControllerBase
     [HttpPost("Add")]
     public IActionResult AddGreeting([FromBody] GreetingModel greetingModel)
     {
-        try
+        logger.Info("POST request received at /HelloGreeting/Add");
+        if(greetingModel == null)
         {
-            logger.Info("POST request received at /HelloGreeting/Add");
-            if(greetingModel == null)
-            {
-                logger.Error("GreetingModel is null");
-                return BadRequest("GreetingModel is null");
-            }
-            var greeting = _greetingBL.AddGreeting(greetingModel);
-            var response = new ResponseModel<GreetingEntity>
-            {
-                Success = true,
-                Message = "Greeting added successfully",
-                Data = greeting
-            };
-            logger.Info("POST request processed successfully");
-            return Created("Greeting Added", response);
+            logger.Error("GreetingModel is null");
+            return BadRequest("GreetingModel is null");
         }
-        catch (Exception e)
+        var greeting = _greetingBL.AddGreeting(greetingModel);
+        var response = new ResponseModel<GreetingEntity>
         {
-            logger.Error(e, "Error occurred in POST method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Greeting added successfully",
+            Data = greeting
+        };
+        logger.Info("POST request processed successfully");
+        return Created("Greeting Added", response);
     }
 
     /// <summary>
@@ -119,29 +93,21 @@ public class HelloGreetingController : ControllerBase
     [HttpPost("FindById")]
     public IActionResult FindGeetingById([FromBody]FindByIdGreetingModel findById)
     {
-        try
+        logger.Info("GET request received at /HelloGreeting/FindById");
+        var greeting = _greetingBL.FindGreetingById(findById);
+        if (greeting == null)
         {
-            logger.Info("GET request received at /HelloGreeting/FindById");
-            var greeting = _greetingBL.FindGreetingById(findById);
-            if (greeting == null)
-            {
-                logger.Error("Greeting not found");
-                return NotFound("Greeting not found");
-            }
-            var response = new ResponseModel<GreetingResponseModel>
-            {
-                Success = true,
-                Message = "Greeting found successfully",
-                Data = greeting
-            };
-            logger.Info("GET request processed successfully");
-            return Ok(response);
+            logger.Error("Greeting not found");
+            return NotFound("Greeting not found");
         }
-        catch (Exception e)
+        var response = new ResponseModel<GreetingResponseModel>
         {
-            logger.Error(e, "Error occurred in GET method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Greeting found successfully",
+            Data = greeting
+        };
+        logger.Info("GET request processed successfully");
+        return Ok(response);
     }
 
     /// <summary>
@@ -151,29 +117,21 @@ public class HelloGreetingController : ControllerBase
     [HttpGet("GetAll")]
     public IActionResult GetAllGreeting()
     {
-        try
+        logger.Info("GET request received at /HelloGreeting/GetAll");
+        var greetings = _greetingBL.GetAllGreetings();
+        if (greetings == null)
         {
-            logger.Info("GET request received at /HelloGreeting/GetAll");
-            var greetings = _greetingBL.GetAllGreetings();
-            if (greetings == null)
-            {
-                logger.Error("Greetings not found");
-                return NotFound("Greetings not found");
-            }
-            var response = new ResponseModel<List<GreetingEntity>>
-            {
-                Success = true,
-                Message = "Greetings found successfully",
-                Data = greetings
-            };
-            logger.Info("GET request processed successfully");
-            return Ok(response);
+            logger.Error("Greetings not found");
+            return NotFound("Greetings not found");
         }
-        catch (Exception e)
+        var response = new ResponseModel<List<GreetingEntity>>
         {
-            logger.Error(e, "Error occurred in GET method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Greetings found successfully",
+            Data = greetings
+        };
+        logger.Info("GET request processed successfully");
+        return Ok(response);
     }
 
     /// <summary>
@@ -186,23 +144,15 @@ public class HelloGreetingController : ControllerBase
     {
         logger.Info($"PUT request received with FirstName={requestModel.FirstName}, LastName={requestModel.LastName}");
 
-        try
-        {
-            ResponseModel<string> responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Updated successfully",
-                Data = $"Name: {requestModel.FirstName} {requestModel.LastName}"
-            };
+    ResponseModel<string> responseModel = new ResponseModel<string>
+    {
+        Success = true,
+        Message = "Updated successfully",
+        Data = $"Name: {requestModel.FirstName} {requestModel.LastName}"
+    };
 
-            logger.Info("PUT request processed successfully");
-            return Ok(responseModel);
-        }
-        catch (Exception ex)
-        {
-            logger.Error(ex, "Error occurred in PUT method");
-            return StatusCode(500, "Internal Server Error");
-        }
+    logger.Info("PUT request processed successfully");
+    return Ok(responseModel);
     }
 
     /// <summary>
@@ -215,29 +165,21 @@ public class HelloGreetingController : ControllerBase
     {
         logger.Info($"PATCH request received with FirstName={requestModel.FirstName}, LastName={requestModel.LastName}");
 
-        try
+        var updates = new
         {
-            var updates = new
-            {
-                firstName = string.IsNullOrEmpty(requestModel.FirstName) ? "Not Updated" : requestModel.FirstName,
-                lastName = string.IsNullOrEmpty(requestModel.LastName) ? "Not Updated" : requestModel.LastName
-            };
+            firstName = string.IsNullOrEmpty(requestModel.FirstName) ? "Not Updated" : requestModel.FirstName,
+            lastName = string.IsNullOrEmpty(requestModel.LastName) ? "Not Updated" : requestModel.LastName
+        };
 
-            ResponseModel<string> responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Updated partially successfully",
-                Data = updates.ToString()
-            };
-
-            logger.Info("PATCH request processed successfully");
-            return Ok(responseModel);
-        }
-        catch (Exception ex)
+        ResponseModel<string> responseModel = new ResponseModel<string>
         {
-            logger.Error(ex, "Error occurred in PATCH method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Updated partially successfully",
+            Data = updates.ToString()
+        };
+
+        logger.Info("PATCH request processed successfully");
+        return Ok(responseModel);
     }
 
     /// <summary>
@@ -248,29 +190,21 @@ public class HelloGreetingController : ControllerBase
     [HttpPatch("Edit")]
     public IActionResult EditGreeting([FromBody] GreetingReqModel reqModel)
     {
-        try
+        logger.Info("PATCH request received at /HelloGreeting/Edit");
+        if (reqModel == null)
         {
-            logger.Info("PATCH request received at /HelloGreeting/Edit");
-            if (reqModel == null)
-            {
-                logger.Error("GreetingReqModel is null");
-                return BadRequest("GreetingReqModel is null");
-            }
-            var greeting = _greetingBL.EditGreeting(reqModel);
-            var response = new ResponseModel<GreetingEntity>
-            {
-                Success = true,
-                Message = "Greeting edited successfully",
-                Data = greeting
-            };
-            logger.Info("PATCH request processed successfully");
-            return Ok(response);
+            logger.Error("GreetingReqModel is null");
+            return BadRequest("GreetingReqModel is null");
         }
-        catch (Exception e)
+        var greeting = _greetingBL.EditGreeting(reqModel);
+        var response = new ResponseModel<GreetingEntity>
         {
-            logger.Error(e, "Error occurred in PATCH method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Greeting edited successfully",
+            Data = greeting
+        };
+        logger.Info("PATCH request processed successfully");
+        return Ok(response);
     }
 
     /// <summary>
@@ -282,23 +216,15 @@ public class HelloGreetingController : ControllerBase
     {
         logger.Info("DELETE request received at /HelloGreeting");
 
-        try
+        ResponseModel<string> responseModel = new ResponseModel<string>
         {
-            ResponseModel<string> responseModel = new ResponseModel<string>
-            {
-                Success = true,
-                Message = "Deleted successfully",
-                Data = ""
-            };
+            Success = true,
+            Message = "Deleted successfully",
+            Data = ""
+        };
 
-            logger.Info("DELETE request processed successfully");
-            return Ok(responseModel);
-        }
-        catch (Exception ex)
-        {
-            logger.Error(ex, "Error occurred in DELETE method");
-            return StatusCode(500, "Internal Server Error");
-        }
+        logger.Info("DELETE request processed successfully");
+        return Ok(responseModel);
     }
 
     /// <summary>
@@ -309,28 +235,20 @@ public class HelloGreetingController : ControllerBase
     [HttpDelete("Delete")]
     public IActionResult DeleteGreeting([FromBody] FindByIdGreetingModel findById)
     {
-        try
+        logger.Info("DELETE request received at /HelloGreeting/Delete");
+        if (findById == null)
         {
-            logger.Info("DELETE request received at /HelloGreeting/Delete");
-            if (findById == null)
-            {
-                logger.Error("FindByIdGreetingModel is null");
-                return BadRequest("FindByIdGreetingModel is null");
-            }
-            var greeting = _greetingBL.DeleteGreeting(findById);
-            var response = new ResponseModel<GreetingEntity>
-            {
-                Success = true,
-                Message = "Greeting deleted successfully",
-                Data = greeting
-            };
-            logger.Info("DELETE request processed successfully");
-            return Ok(response);
+            logger.Error("FindByIdGreetingModel is null");
+            return BadRequest("FindByIdGreetingModel is null");
         }
-        catch (Exception e)
+        var greeting = _greetingBL.DeleteGreeting(findById);
+        var response = new ResponseModel<GreetingEntity>
         {
-            logger.Error(e, "Error occurred in DELETE method");
-            return StatusCode(500, "Internal Server Error");
-        }
+            Success = true,
+            Message = "Greeting deleted successfully",
+            Data = greeting
+        };
+        logger.Info("DELETE request processed successfully");
+        return Ok(response);
     }
 }

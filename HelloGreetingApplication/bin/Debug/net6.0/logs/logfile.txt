@@ -1,0 +1,66 @@
+2025-03-14 17:21:26.4056 | Info | Application Starting... | 
+2025-03-14 17:21:28.6600 | Info | Now listening on: https://localhost:7210 | 
+2025-03-14 17:21:28.6714 | Info | Now listening on: http://localhost:5224 | 
+2025-03-14 17:21:28.8843 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-14 17:21:28.8843 | Info | Hosting environment: Development | 
+2025-03-14 17:21:28.8843 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-14 17:21:31.4939 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-14 17:21:31.8524 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 404 0 - 361.0834ms | 
+2025-03-14 17:25:05.6771 | Info | Application Starting... | 
+2025-03-14 17:25:07.2457 | Info | Now listening on: https://localhost:7210 | 
+2025-03-14 17:25:07.2579 | Info | Now listening on: http://localhost:5224 | 
+2025-03-14 17:25:07.5136 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-14 17:25:07.5136 | Info | Hosting environment: Development | 
+2025-03-14 17:25:07.5136 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-14 17:25:08.4903 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-14 17:25:08.9292 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 404 0 - 442.5949ms | 
+2025-03-14 17:31:25.6875 | Info | Application Starting... | 
+2025-03-14 17:31:27.5407 | Info | Now listening on: https://localhost:7210 | 
+2025-03-14 17:31:27.5592 | Info | Now listening on: http://localhost:5224 | 
+2025-03-14 17:31:27.7970 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-14 17:31:27.7970 | Info | Hosting environment: Development | 
+2025-03-14 17:31:27.7970 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-14 17:31:30.9076 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-14 17:31:31.4553 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 404 0 - 554.7030ms | 
+2025-03-14 17:38:31.4501 | Info | Application Starting... | 
+2025-03-14 17:38:33.0854 | Info | Now listening on: https://localhost:7210 | 
+2025-03-14 17:38:33.0854 | Info | Now listening on: http://localhost:5224 | 
+2025-03-14 17:38:33.3241 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-14 17:38:33.3241 | Info | Hosting environment: Development | 
+2025-03-14 17:38:33.3241 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-14 17:38:34.7159 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-14 17:38:35.2961 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 200 - text/html;charset=utf-8 584.3093ms | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.css - - | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.js - - | 
+2025-03-14 17:38:35.3949 | Info | Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-14 17:38:35.3991 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.0497ms | 
+2025-03-14 17:38:35.3991 | Info | Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 15.4061ms | 
+2025-03-14 17:38:35.4161 | Info | The file /swagger-ui-bundle.js was not modified | 
+2025-03-14 17:38:35.4161 | Info | The file /index.css was not modified | 
+2025-03-14 17:38:35.4161 | Info | The file /swagger-ui.css was not modified | 
+2025-03-14 17:38:35.4161 | Info | The file /swagger-ui-standalone-preset.js was not modified | 
+2025-03-14 17:38:35.4161 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 22.4664ms | 
+2025-03-14 17:38:35.4161 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 22.5220ms | 
+2025-03-14 17:38:35.4161 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.css - - - 304 - text/css 22.6052ms | 
+2025-03-14 17:38:35.4161 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - - 304 - text/css 22.4931ms | 
+2025-03-14 17:38:35.7132 | Info | Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - - | 
+2025-03-14 17:38:36.7876 | Info | Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 1074.3566ms | 
+2025-03-14 17:38:36.9610 | Info | Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - | 
+2025-03-14 17:38:36.9610 | Info | Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 13.0333ms | 
+2025-03-14 17:38:37.0194 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - | 
+2025-03-14 17:38:37.0349 | Info | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' | 
+2025-03-14 17:38:37.0349 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - - 200 628 image/png 16.1313ms | 
+2025-03-14 17:38:52.2011 | Info | Request starting HTTP/2 GET https://localhost:7210/HelloGreeting - - | 
+2025-03-14 17:38:52.2118 | Info | Executing endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.Get (HelloGreetingApplication)' | 
+2025-03-14 17:38:52.2708 | Info | Route matched with {action = "Get", controller = "HelloGreeting"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller HelloGreetingApplication.Controllers.HelloGreetingController (HelloGreetingApplication). | 
+2025-03-14 17:38:52.8338 | Info | GET request received at /HelloGreeting | 
+2025-03-14 17:38:52.8338 | Info | GetGreeting method called with parameters: FirstName=, LastName= | 
+2025-03-14 17:38:52.8338 | Info | Returning default greeting message | 
+2025-03-14 17:38:52.8360 | Info | GET request processed successfully | 
+2025-03-14 17:38:52.8360 | Info | Executing OkObjectResult, writing value of type 'ModelLayer.Model.ResponseModel`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. | 
+2025-03-14 17:38:52.8641 | Info | Executed action HelloGreetingApplication.Controllers.HelloGreetingController.Get (HelloGreetingApplication) in 585.3536ms | 
+2025-03-14 17:38:52.8641 | Info | Executed endpoint 'HelloGreetingApplication.Controllers.HelloGreetingController.Get (HelloGreetingApplication)' | 
+2025-03-14 17:38:52.8709 | Info | Request finished HTTP/2 GET https://localhost:7210/HelloGreeting - - - 200 - application/json;+charset=utf-8 669.9235ms | 

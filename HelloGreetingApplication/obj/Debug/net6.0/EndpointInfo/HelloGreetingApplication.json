@@ -10,6 +10,7 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Get Method to get the Greeting Message",
         "responses": {
           "200": {
             "description": "OK"
@@ -20,7 +21,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Post Method to Post the Greeting Message",
         "requestBody": {
+          "description": "RequestModel",
           "content": {
             "application/json": {
               "schema": {
@@ -49,7 +52,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Put Method to Update the Greeting Message",
         "requestBody": {
+          "description": "RequestModel",
           "content": {
             "application/json": {
               "schema": {
@@ -78,7 +83,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Patch Method to Update the Greeting Message",
         "requestBody": {
+          "description": "RequestModel",
           "content": {
             "application/json": {
               "schema": {
@@ -107,6 +114,7 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Delete Method to Delete the Greeting Message",
         "responses": {
           "200": {
             "description": "OK"
@@ -119,7 +127,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Post Method to Add Greeting",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -150,7 +160,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Get Method to Find Greeting by Id",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -181,6 +193,7 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Get Method to Get All Greetings",
         "responses": {
           "200": {
             "description": "OK"
@@ -193,7 +206,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Patch Method to Edit the Greeting Message",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -224,7 +239,9 @@
         "tags": [
           "HelloGreeting"
         ],
+        "summary": "Delete Method to Delete the Greeting Message",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -301,6 +318,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "Enter 'Bearer {token}' to authenticate",
+        "scheme": "Bearer",
+        "bearerFormat": "JWT"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }
