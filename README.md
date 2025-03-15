@@ -42,3 +42,9 @@
 ### UC9
     -Applied Global Exception and Swagger to the Greeting App.
     -Created new branch UC10
+
+### UC10
+    -Created Second controller(UserController).
+    -Applied logic for register and login user.
+    -Applied hashing(salting) algo for register and login.
+    -Created new branch UC10

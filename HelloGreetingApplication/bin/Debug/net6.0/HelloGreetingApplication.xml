@@ -76,5 +76,29 @@
             <param name="findById"></param>
             <returns>"Greeting Deleted Successfully"</returns>
         </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.Register(RepositoryLayer.Entity.UserEntity)">
+            <summary>
+            API to register a new user
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.Login(ModelLayer.Model.LoginModel)">
+            <summary>
+            API for user login
+            </summary>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.ForgotPassword(ModelLayer.Model.ForgotPasswordModel)">
+            <summary>
+            API to send email for resetting password
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HelloGreetingApplication.Controllers.UserController.ResetPassword(ModelLayer.Model.ResetPasswordModel)">
+            <summary>
+            API to reset password
+            </summary>
+        </member>
     </members>
 </doc>

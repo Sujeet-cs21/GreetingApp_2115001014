@@ -1,0 +1,37 @@
+﻿using BusinessLayer.Interface;
+using ModelLayer.Model;
+using NLog;
+using RepositoryLayer.Entity;
+using RepositoryLayer.Interface;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace BusinessLayer.Service
+{
+    public class UserBL : IUserBL
+    {
+        private readonly IUserRL _userRL;
+        private static readonly ILogger logger = LogManager.GetCurrentClassLogger();
+
+        public UserBL(IUserRL userRL)
+        {
+            _userRL = userRL;
+        }
+
+        public bool RegisterUser(UserEntity model)
+        {
+            logger.Info("UserBL: RegisterUser method called.");
+            return _userRL.RegisterUser(model);
+        }
+
+        public bool LoginUser(LoginModel model)
+        {
+            return _userRL.LoginUserRL(model);
+        }
+
+        public bool ResetPassword(string email, string newPassword)
+        {
+            return _userRL.ResetPassword(email, newPassword);
+        }
+    }
+}
