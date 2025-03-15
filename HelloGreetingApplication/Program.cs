@@ -1,6 +1,8 @@
 using BusinessLayer.Interface;
 using BusinessLayer.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Middleware.GlobalExceptionHandler;
 using NLog;
@@ -9,11 +11,16 @@ using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using RepositoryLayer.Service;
 using System.Reflection;
+using System.Text;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Info("Application Starting...");
 
 var builder = WebApplication.CreateBuilder(args);
+
+var jwtKey = builder.Configuration["Jwt:Key"];
+var jwtIssuer = builder.Configuration["Jwt:Issuer"];
+var jwtAudience = builder.Configuration["Jwt:Audience"];
 
 // Add services
 builder.Services.AddControllers();
@@ -21,6 +28,7 @@ builder.Services.AddScoped<IGreetingBL, GreetingBL>();
 builder.Services.AddScoped<IGreetingRL, GreetingRL>();
 builder.Services.AddScoped<IUserBL, UserBL>();
 builder.Services.AddScoped<IUserRL, UserRL>();
+builder.Services.AddScoped<TokenService>();
 
 // Database Connection
 var connectionString = builder.Configuration.GetConnectionString("SqlConnection");
@@ -39,7 +47,7 @@ builder.Host.UseNLog();
 
 builder.Services.AddEndpointsApiExplorer();
 
-// ? Configure Swagger for All Environments
+//Configure Swagger for All Environments
 builder.Services.AddSwaggerGen(options =>
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -74,9 +82,26 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 builder.WebHost.UseKestrel();
+
+// Configure JWT authentication
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
+
 var app = builder.Build();
 
-// ? Ensure Swagger is enabled in all environments
+//Ensure Swagger is enabled in all environments
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
@@ -87,6 +112,7 @@ app.UseSwaggerUI(options =>
 // Middleware
 app.UseHttpsRedirection();
 app.UseAuthorization();
+app.UseAuthentication();
 app.MapControllers();
 app.UseMiddleware<ExceptionHandler>();
 

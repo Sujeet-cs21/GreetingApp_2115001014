@@ -156,3 +156,4 @@ C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\ne
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\Middleware.pdb
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\HelloGreetingApplication.xml
 C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\obj\Debug\net6.0\HelloGreetingApplication.xml
+C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
