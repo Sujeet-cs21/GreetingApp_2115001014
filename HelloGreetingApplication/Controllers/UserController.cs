@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using BusinessLayer.Service;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -44,14 +45,19 @@ namespace HelloGreetingApplication.Controllers
         public IActionResult Login([FromBody] LoginModel model)
         {
             logger.Info($"Login request received for {model.UserName}");
+            var result = _userBL.LoginUser(model);
             var message = "Login Successful";
-            if (_userBL.LoginUser(model))
+            if (!result)
             {
-                logger.Info($"User logged in successfully for {model.UserName}");
-                return Ok(message);
+                logger.Error("Invalid credentials");
+                return Unauthorized(new { message = "Invalid credentials" });
             }
-            logger.Warn($"Invalid credentials received for login with username: {model.UserName}");
-            return Unauthorized(message);
+
+            logger.Info($"User {model.UserName} logged in successfully");
+            var tokenService = HttpContext.RequestServices.GetRequiredService<TokenService>();
+            string token = tokenService.GenerateToken(model.UserName);
+
+            return Ok(new {Message = message, Token = token});
         }
 
         /// <summary>

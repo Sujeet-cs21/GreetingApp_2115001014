@@ -48,3 +48,7 @@
     -Applied logic for register and login user.
     -Applied hashing(salting) algo for register and login.
     -Created new branch UC10
+
+### UC11
+    -Applied JWT into the project.
+    -Created new branch UC12

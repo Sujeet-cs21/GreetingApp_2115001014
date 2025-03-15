@@ -163,3 +163,38 @@ WHERE [u].[UserName] = @__loginModel_UserName_0 |
 2025-03-15 15:02:09.5909 | Info | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 967.394ms | 
 2025-03-15 15:02:09.5909 | Info | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' | 
 2025-03-15 15:02:09.5909 | Info | Request finished HTTP/2 POST https://localhost:7210/api/User/Login application/json 55 - 200 - text/plain;+charset=utf-8 977.0843ms | 
+2025-03-15 15:50:21.8257 | Info | Application Starting... | 
+2025-03-15 15:50:23.5232 | Info | User profile is available. Using 'C:\Users\Sujeet\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. | 
+2025-03-15 15:50:24.5189 | Info | Now listening on: https://localhost:7210 | 
+2025-03-15 15:50:24.5189 | Info | Now listening on: http://localhost:5224 | 
+2025-03-15 15:50:24.9234 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-15 15:50:24.9234 | Info | Hosting environment: Development | 
+2025-03-15 15:50:24.9234 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-15 15:50:26.1488 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-15 15:50:27.1009 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 200 - text/html;charset=utf-8 959.6834ms | 
+2025-03-15 15:50:27.1951 | Info | Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-15 15:50:27.1951 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.js - - | 
+2025-03-15 15:50:27.2046 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 9.4288ms | 
+2025-03-15 15:50:27.2169 | Info | Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 21.7700ms | 
+2025-03-15 15:50:27.7546 | Info | Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - - | 
+2025-03-15 15:50:27.8975 | Info | Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 142.9175ms | 
+2025-03-15 15:50:29.3933 | Info | Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - | 
+2025-03-15 15:50:29.4151 | Info | Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 21.8045ms | 
+2025-03-15 15:51:06.6970 | Info | Request starting HTTP/2 POST https://localhost:7210/api/User/Login application/json 55 | 
+2025-03-15 15:51:07.0617 | Info | Executing endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' | 
+2025-03-15 15:51:07.1566 | Info | Route matched with {action = "Login", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login(ModelLayer.Model.LoginModel) on controller HelloGreetingApplication.Controllers.UserController (HelloGreetingApplication). | 
+2025-03-15 15:51:07.8412 | Info | Login request received for Sujeet Kumar | 
+2025-03-15 15:51:09.3181 | Info | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None | 
+2025-03-15 15:51:11.7913 | Info | Executed DbCommand (161ms) [Parameters=[@__loginModel_UserName_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Password], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[UserName] = @__loginModel_UserName_0 | 
+2025-03-15 15:51:11.9951 | Info | Verifying password | 
+2025-03-15 15:51:12.0147 | Info | Password verified successfully | 
+2025-03-15 15:51:12.0147 | Info | Comparing hashes | 
+2025-03-15 15:51:12.0147 | Info | User logged in successfully! with username: Sujeet Kumar | 
+2025-03-15 15:51:12.0147 | Info | User Sujeet Kumar logged in successfully | 
+2025-03-15 15:51:12.4081 | Info | Executing OkObjectResult, writing value of type '<>f__AnonymousType2`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'. | 
+2025-03-15 15:51:12.4309 | Info | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 5264.2743ms | 
+2025-03-15 15:51:12.4309 | Info | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' | 
+2025-03-15 15:51:12.4546 | Info | Request finished HTTP/2 POST https://localhost:7210/api/User/Login application/json 55 - 200 - application/json;+charset=utf-8 5757.6644ms | 
