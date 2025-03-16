@@ -70,8 +70,29 @@ namespace RepositoryLayer.Service
             return _context.Users.FirstOrDefault(u => u.UserName == userName);
         }
 
+        public bool ValidateEmail(string email)
+        {
+            var result = _context.Users.FirstOrDefault(user => user.Email == email);
+            Console.WriteLine(result);
+            if (result == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public bool ResetPassword(string email, string newPassword)
         {
+            logger.Info($"Resetting password for user with email: {email}");
+            var user = _context.Users.FirstOrDefault(u => u.Email == email);
+            if (user != null)
+            {
+                logger.Info($"Password reset successfully for user with email: {email}");
+                user.Password = password_Hash.HashPassword(newPassword);
+                _context.SaveChanges();
+                return true;
+            }
+            logger.Warn($"Invalid email received for password reset: {email}");
             return false;
         }
     }

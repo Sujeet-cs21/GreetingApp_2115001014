@@ -29,6 +29,10 @@ namespace BusinessLayer.Service
             return _userRL.LoginUserRL(model);
         }
 
+        public bool ValidateEmail(string email)
+        {
+            return _userRL.ValidateEmail(email);
+        }
         public bool ResetPassword(string email, string newPassword)
         {
             return _userRL.ResetPassword(email, newPassword);

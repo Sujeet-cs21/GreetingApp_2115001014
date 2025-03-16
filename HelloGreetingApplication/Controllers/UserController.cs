@@ -13,10 +13,12 @@ namespace HelloGreetingApplication.Controllers
     {
         private readonly IUserBL _userBL;
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+        private readonly TokenService _jwtService;
 
-        public UserController(IUserBL userBL)
+        public UserController(IUserBL userBL, TokenService jwtService)
         {
             _userBL = userBL;
+            _jwtService = jwtService;
         }
 
         /// <summary>
@@ -65,19 +67,62 @@ namespace HelloGreetingApplication.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        [HttpPost("ForgotPassword")]
-        public IActionResult ForgotPassword([FromBody] ForgotPasswordModel model)
+        [HttpPost("forgot-password")]
+        public IActionResult ForgotPassword([FromBody] ForgotPasswordModel request)
         {
-            return BadRequest("Email sent successfully");
+            try
+            {
+                // Validate the email
+                if (string.IsNullOrEmpty(request.Email))
+                {
+                    return BadRequest("Email is required.");
+                }
+
+                bool validEmail = _userBL.ValidateEmail(request.Email);
+                if (!validEmail)
+                {
+                    return BadRequest("Invalid email.");
+                }
+
+                // Generate JWT reset token
+                var resetToken = _jwtService.GenerateResetToken(request.Email);
+
+                // Create the email payload
+                var message = new
+                {
+                    To = request.Email,
+                    Subject = "Reset Your Password",
+                    Body = $"Click the link to reset your password: https://yourdomain.com/reset-password?token={resetToken}"
+                };
+
+                return Ok("Password reset email has been sent.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Error occurred while processing the password reset", error = ex.Message });
+            }
         }
 
         /// <summary>
         /// API to reset password
         /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost("ResetPassword")]
         public IActionResult ResetPassword([FromBody] ResetPasswordModel model)
         {
+            logger.Info($"ResetPassword request received for {model.Email}");
+            if (model.NewPassword == model.ConfirmPassword)
+            {
+                bool result = _userBL.ResetPassword(model.Email, model.NewPassword);
+                if (result)
+                {
+                    return Ok("Password reset successful");
+                }
+                return BadRequest("Error occurred during password reset");
+            }
             return BadRequest("Passwords do not match");
         }
+
     }
 }
