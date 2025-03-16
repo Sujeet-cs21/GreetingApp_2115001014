@@ -198,3 +198,35 @@ WHERE [u].[UserName] = @__loginModel_UserName_0 |
 2025-03-15 15:51:12.4309 | Info | Executed action HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication) in 5264.2743ms | 
 2025-03-15 15:51:12.4309 | Info | Executed endpoint 'HelloGreetingApplication.Controllers.UserController.Login (HelloGreetingApplication)' | 
 2025-03-15 15:51:12.4546 | Info | Request finished HTTP/2 POST https://localhost:7210/api/User/Login application/json 55 - 200 - application/json;+charset=utf-8 5757.6644ms | 
+2025-03-17 03:19:42.3988 | Info | Application Starting... | 
+2025-03-17 03:19:43.5476 | Info | User profile is available. Using 'C:\Users\Sujeet\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. | 
+2025-03-17 03:19:44.0933 | Info | Now listening on: https://localhost:7210 | 
+2025-03-17 03:19:44.0933 | Info | Now listening on: http://localhost:5224 | 
+2025-03-17 03:19:44.3758 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-17 03:19:44.3758 | Info | Hosting environment: Development | 
+2025-03-17 03:19:44.3758 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-17 03:19:44.9398 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-17 03:19:45.6492 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 200 - text/html;charset=utf-8 711.3612ms | 
+2025-03-17 03:19:45.7846 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - | 
+2025-03-17 03:19:45.7847 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - | 
+2025-03-17 03:19:45.7847 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - | 
+2025-03-17 03:19:45.7847 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.css - - | 
+2025-03-17 03:19:45.7847 | Info | Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-17 03:19:45.9377 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.js - - | 
+2025-03-17 03:19:45.9503 | Info | Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - - | 
+2025-03-17 03:19:45.9809 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 43.3451ms | 
+2025-03-17 03:19:45.9809 | Info | Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 12380 application/javascript;+charset=utf-8 203.9161ms | 
+2025-03-17 03:19:45.9809 | Info | The file /swagger-ui.css was not modified | 
+2025-03-17 03:19:45.9809 | Info | The file /swagger-ui-bundle.js was not modified | 
+2025-03-17 03:19:45.9809 | Info | The file /index.css was not modified | 
+2025-03-17 03:19:45.9809 | Info | The file /swagger-ui-standalone-preset.js was not modified | 
+2025-03-17 03:19:46.0006 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - - 304 - text/css 215.8680ms | 
+2025-03-17 03:19:46.0006 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - - 304 - application/javascript 215.2643ms | 
+2025-03-17 03:19:46.0006 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.css - - - 304 - text/css 216.1889ms | 
+2025-03-17 03:19:46.0006 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - - 304 - application/javascript 216.3843ms | 
+2025-03-17 03:19:46.0755 | Info | Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 125.1261ms | 
+2025-03-17 03:19:46.2977 | Info | Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - | 
+2025-03-17 03:19:46.3118 | Info | Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 14.1343ms | 
+2025-03-17 03:19:46.3320 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - | 
+2025-03-17 03:19:46.3459 | Info | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' | 
+2025-03-17 03:19:46.3459 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - - 200 628 image/png 14.3704ms | 

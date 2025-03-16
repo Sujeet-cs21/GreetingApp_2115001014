@@ -2,13 +2,13 @@
   {
     "ContainingType": "HelloGreetingApplication.Controllers.UserController",
     "Method": "ForgotPassword",
-    "RelativePath": "api/User/ForgotPassword",
+    "RelativePath": "api/User/forgot-password",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
+        "Name": "request",
         "Type": "ModelLayer.Model.ForgotPasswordModel",
         "IsRequired": true
       }

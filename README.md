@@ -52,3 +52,7 @@
 ### UC11
     -Applied JWT into the project.
     -Created new branch UC12
+### UC12
+    -Applied SMTP server mail generation.
+    -Gave body to ForgetPassword and ResetPassWord.
+    -Created branch UC13

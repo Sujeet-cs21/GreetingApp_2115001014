@@ -332,14 +332,13 @@
         }
       }
     },
-    "/api/User/ForgotPassword": {
+    "/api/User/forgot-password": {
       "post": {
         "tags": [
           "User"
         ],
         "summary": "API to send email for resetting password",
         "requestBody": {
-          "description": "",
           "content": {
             "application/json": {
               "schema": {
@@ -372,6 +371,7 @@
         ],
         "summary": "API to reset password",
         "requestBody": {
+          "description": "",
           "content": {
             "application/json": {
               "schema": {

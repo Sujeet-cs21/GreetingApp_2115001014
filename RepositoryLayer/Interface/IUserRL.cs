@@ -8,6 +8,7 @@ namespace RepositoryLayer.Interface
         public bool RegisterUser(UserEntity user);
         public bool LoginUserRL(LoginModel loginModel);
         public UserEntity GetUserByUsername(string userName);
+        public bool ValidateEmail(string email);
         public bool ResetPassword(string email, string newPassword);
     }
 }

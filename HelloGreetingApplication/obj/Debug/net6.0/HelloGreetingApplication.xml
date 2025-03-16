@@ -99,6 +99,8 @@
             <summary>
             API to reset password
             </summary>
+            <param name="model"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>
