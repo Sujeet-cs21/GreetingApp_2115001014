@@ -44,16 +44,16 @@ namespace BusinessLayer.Service
             }
         }
 
-        public GreetingEntity AddGreeting(GreetingModel greeting)
+        public GreetingEntity AddGreeting(GreetingModel greeting, int userId)
         {
             logger.Info("Business Layer - AddGreeting method started.");
-            return _greetingRL.AddGreeting(greeting);
+            return _greetingRL.AddGreeting(greeting,userId);
         }
 
-        public GreetingResponseModel FindGreetingById(FindByIdGreetingModel findByIdGreetingModel)
+        public GreetingResponseModel FindGreetingById(FindByIdGreetingModel findByIdGreetingModel, int userId)
         {
             logger.Info("Business Layer - FindGreetingById method started.");
-            var result = _greetingRL.FindGreetingById(findByIdGreetingModel);
+            var result = _greetingRL.FindGreetingById(findByIdGreetingModel,userId);
             if (result == null)
             {
                 logger.Error("Business Layer - Greeting not found.");
@@ -63,22 +63,22 @@ namespace BusinessLayer.Service
             return new GreetingResponseModel { Id = result.Id, Greeting = result.Greeting };
         }
 
-        public List<GreetingEntity> GetAllGreetings()
+        public List<GreetingEntity> GetAllGreetings(int userId)
         {
             logger.Info("Business Layer - GetAllGreetings method started.");
-            return _greetingRL.GetAllGreetings();
+            return _greetingRL.GetAllGreetings(userId);
         }
 
-        public GreetingEntity EditGreeting(GreetingReqModel reqModel)
+        public GreetingEntity EditGreeting(GreetingReqModel reqModel, int userId)
         {
             logger.Info("Business Layer - EditGreeting method started.");
-            return _greetingRL.EditGreeting(reqModel);
+            return _greetingRL.EditGreeting(reqModel,userId);
         }
 
-        public GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel)
+        public GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel, int userId)
         {
             logger.Info("Business Layer - DeleteGreeting method started.");
-            return _greetingRL.DeleteGreeting(findByIdGreetingModel);
+            return _greetingRL.DeleteGreeting(findByIdGreetingModel,userId);
         }
     }
 }

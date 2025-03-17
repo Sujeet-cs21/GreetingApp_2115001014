@@ -26,15 +26,22 @@ namespace BusinessLayer.Service
 
         public bool LoginUser(LoginModel model)
         {
+            logger.Info("UserBL: LoginUser method called.");
             return _userRL.LoginUserRL(model);
         }
 
+        public UserEntity GetUserByUsername(string userName)
+        {
+            logger.Info("UserBL: GetUserByUsername method called.");
+            return _userRL.GetUserByUsername(userName);
+        }
         public bool ValidateEmail(string email)
         {
             return _userRL.ValidateEmail(email);
         }
         public bool ResetPassword(string email, string newPassword)
         {
+            logger.Info("UserBL: ResetPassword method called.");
             return _userRL.ResetPassword(email, newPassword);
         }
     }

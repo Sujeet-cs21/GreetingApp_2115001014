@@ -48,16 +48,17 @@ namespace HelloGreetingApplication.Controllers
         {
             logger.Info($"Login request received for {model.UserName}");
             var result = _userBL.LoginUser(model);
-            var message = "Login Successful";
             if (!result)
             {
                 logger.Error("Invalid credentials");
                 return Unauthorized(new { message = "Invalid credentials" });
             }
 
+            var message = "Login Successful";
+            var user = _userBL.GetUserByUsername(model.UserName);
             logger.Info($"User {model.UserName} logged in successfully");
             var tokenService = HttpContext.RequestServices.GetRequiredService<TokenService>();
-            string token = tokenService.GenerateToken(model.UserName);
+            string token = tokenService.GenerateToken(model.UserName,user.Id);
 
             return Ok(new {Message = message, Token = token});
         }

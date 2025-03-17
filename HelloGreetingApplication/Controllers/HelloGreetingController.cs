@@ -1,4 +1,5 @@
 using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Model;
 using NLog;
@@ -65,6 +66,7 @@ public class HelloGreetingController : ControllerBase
     /// </summary>
     /// <param name="greetingModel"></param>
     /// <returns>"Greeting Added"</returns>
+    [Authorize]
     [HttpPost("Add")]
     public IActionResult AddGreeting([FromBody] GreetingModel greetingModel)
     {
@@ -74,7 +76,8 @@ public class HelloGreetingController : ControllerBase
             logger.Error("GreetingModel is null");
             return BadRequest("GreetingModel is null");
         }
-        var greeting = _greetingBL.AddGreeting(greetingModel);
+        int userId = GetUserIdFromClaims();
+        var greeting = _greetingBL.AddGreeting(greetingModel,userId);
         var response = new ResponseModel<GreetingEntity>
         {
             Success = true,
@@ -90,11 +93,13 @@ public class HelloGreetingController : ControllerBase
     /// </summary>
     /// <param name="findById"></param>
     /// <returns>"GreetingResposeModel"</returns>
+    [Authorize]
     [HttpPost("FindById")]
     public IActionResult FindGeetingById([FromBody]FindByIdGreetingModel findById)
     {
         logger.Info("GET request received at /HelloGreeting/FindById");
-        var greeting = _greetingBL.FindGreetingById(findById);
+        int userId = GetUserIdFromClaims();
+        var greeting = _greetingBL.FindGreetingById(findById,userId);
         if (greeting == null)
         {
             logger.Error("Greeting not found");
@@ -114,11 +119,13 @@ public class HelloGreetingController : ControllerBase
     /// Get Method to Get All Greetings
     /// </summary>
     /// <returns>"All Greetings"</returns>
+    [Authorize]
     [HttpGet("GetAll")]
     public IActionResult GetAllGreeting()
     {
         logger.Info("GET request received at /HelloGreeting/GetAll");
-        var greetings = _greetingBL.GetAllGreetings();
+        int userId = GetUserIdFromClaims();
+        var greetings = _greetingBL.GetAllGreetings(userId);
         if (greetings == null)
         {
             logger.Error("Greetings not found");
@@ -187,6 +194,7 @@ public class HelloGreetingController : ControllerBase
     /// </summary>
     /// <param name="reqModel"></param>
     /// <returns>"Edited Successfully"</returns>
+    [Authorize]
     [HttpPatch("Edit")]
     public IActionResult EditGreeting([FromBody] GreetingReqModel reqModel)
     {
@@ -196,7 +204,8 @@ public class HelloGreetingController : ControllerBase
             logger.Error("GreetingReqModel is null");
             return BadRequest("GreetingReqModel is null");
         }
-        var greeting = _greetingBL.EditGreeting(reqModel);
+        int userId = GetUserIdFromClaims();
+        var greeting = _greetingBL.EditGreeting(reqModel,userId);
         var response = new ResponseModel<GreetingEntity>
         {
             Success = true,
@@ -232,6 +241,7 @@ public class HelloGreetingController : ControllerBase
     /// </summary>
     /// <param name="findById"></param>
     /// <returns>"Greeting Deleted Successfully"</returns>
+    [Authorize]
     [HttpDelete("Delete")]
     public IActionResult DeleteGreeting([FromBody] FindByIdGreetingModel findById)
     {
@@ -241,7 +251,8 @@ public class HelloGreetingController : ControllerBase
             logger.Error("FindByIdGreetingModel is null");
             return BadRequest("FindByIdGreetingModel is null");
         }
-        var greeting = _greetingBL.DeleteGreeting(findById);
+        int userId = GetUserIdFromClaims();
+        var greeting = _greetingBL.DeleteGreeting(findById,userId);
         var response = new ResponseModel<GreetingEntity>
         {
             Success = true,
@@ -250,5 +261,11 @@ public class HelloGreetingController : ControllerBase
         };
         logger.Info("DELETE request processed successfully");
         return Ok(response);
+    }
+
+    private int GetUserIdFromClaims()
+    {
+        var userIdClaim = User.FindFirst("UserId");
+        return userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
     }
 }

@@ -52,7 +52,13 @@
 ### UC11
     -Applied JWT into the project.
     -Created new branch UC12
+
 ### UC12
     -Applied SMTP server mail generation.
     -Gave body to ForgetPassword and ResetPassWord.
     -Created branch UC13
+
+### UC13
+    -Created Primary/Foreign key relationship between greeting and user table.
+    -Adjusted greeting methods according to new relationship.
+    -Created branch UC14
