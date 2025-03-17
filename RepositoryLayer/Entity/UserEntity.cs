@@ -12,5 +12,7 @@ namespace RepositoryLayer.Entity
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
+
+        public ICollection<GreetingEntity> Greeting { get; set; } = new List<GreetingEntity>();
     }
 }

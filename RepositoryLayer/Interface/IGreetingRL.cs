@@ -5,10 +5,10 @@ namespace RepositoryLayer.Interface
 {
     public interface IGreetingRL
     {
-        GreetingEntity AddGreeting(GreetingModel greeting);
-        GreetingEntity FindGreetingById(FindByIdGreetingModel findByIdGreetingModel);
-        List<GreetingEntity> GetAllGreetings();
-        GreetingEntity EditGreeting(GreetingReqModel reqModel );
-        GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel);
+        GreetingEntity AddGreeting(GreetingModel greeting, int userId);
+        GreetingEntity FindGreetingById(FindByIdGreetingModel findByIdGreetingModel, int userId);
+        List<GreetingEntity> GetAllGreetings(int userId);
+        GreetingEntity EditGreeting(GreetingReqModel reqModel,int userId );
+        GreetingEntity DeleteGreeting(FindByIdGreetingModel findByIdGreetingModel, int userId);
     }
 }

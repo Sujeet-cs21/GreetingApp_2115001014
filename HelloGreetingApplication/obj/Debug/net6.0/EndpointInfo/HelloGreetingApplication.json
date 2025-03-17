@@ -420,6 +420,30 @@
         },
         "additionalProperties": false
       },
+      "GreetingEntity": {
+        "required": [
+          "greeting"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "greeting": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "user": {
+            "$ref": "#/components/schemas/UserEntity"
+          }
+        },
+        "additionalProperties": false
+      },
       "GreetingModel": {
         "type": "object",
         "properties": {
@@ -513,6 +537,13 @@
           "password": {
             "minLength": 1,
             "type": "string"
+          },
+          "greeting": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GreetingEntity"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

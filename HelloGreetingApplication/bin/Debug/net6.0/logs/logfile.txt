@@ -230,3 +230,117 @@ WHERE [u].[UserName] = @__loginModel_UserName_0 |
 2025-03-17 03:19:46.3320 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - | 
 2025-03-17 03:19:46.3459 | Info | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' | 
 2025-03-17 03:19:46.3459 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - - 200 628 image/png 14.3704ms | 
+2025-03-17 10:47:43.3792 | Info | Application Starting... | 
+2025-03-17 10:47:44.6346 | Info | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None | 
+2025-03-17 10:48:06.0085 | Info | Application Starting... | 
+2025-03-17 10:48:07.0693 | Info | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None | 
+2025-03-17 10:48:07.8299 | Info | Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2025-03-17 10:48:07.8677 | Info | Executed DbCommand (19ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); | 
+2025-03-17 10:48:07.8730 | Info | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2025-03-17 10:48:07.8730 | Info | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); | 
+2025-03-17 10:48:07.9350 | Info | Executed DbCommand (33ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; | 
+2025-03-17 10:48:07.9518 | Info | Applying migration '20250317051744_ForeignKey'. | 
+2025-03-17 10:48:08.0648 | Info | Executed DbCommand (64ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Greetings] ADD [UserId] int NOT NULL DEFAULT 0; | 
+2025-03-17 10:48:08.1089 | Info | Executed DbCommand (43ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Greetings_UserId] ON [Greetings] ([UserId]); | 
+2025-03-17 10:48:08.1508 | Error | Failed executing DbCommand (40ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Greetings] ADD CONSTRAINT [FK_Greetings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE; | 
+2025-03-17 10:49:30.4969 | Info | Application Starting... | 
+2025-03-17 10:49:31.9106 | Info | Entity Framework Core 6.0.36 initialized 'GreetingContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.36' with options: None | 
+2025-03-17 10:49:32.6652 | Info | Executed DbCommand (217ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [HelloGreeting]; | 
+2025-03-17 10:49:32.7386 | Info | Executed DbCommand (70ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [HelloGreeting] SET READ_COMMITTED_SNAPSHOT ON;
+END; | 
+2025-03-17 10:49:32.7622 | Info | Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2025-03-17 10:49:32.8889 | Info | Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+); | 
+2025-03-17 10:49:32.8889 | Info | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1 | 
+2025-03-17 10:49:32.9129 | Info | Executed DbCommand (15ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]'); | 
+2025-03-17 10:49:32.9255 | Info | Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId]; | 
+2025-03-17 10:49:32.9444 | Info | Applying migration '20250304161355_Initial'. | 
+2025-03-17 10:49:32.9727 | Info | Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Greetings] (
+    [Id] int NOT NULL IDENTITY,
+    [Greeting] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Greetings] PRIMARY KEY ([Id])
+); | 
+2025-03-17 10:49:32.9800 | Info | Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250304161355_Initial', N'6.0.36'); | 
+2025-03-17 10:49:32.9800 | Info | Applying migration '20250314171852_Second'. | 
+2025-03-17 10:49:32.9800 | Info | Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] int NOT NULL IDENTITY,
+    [UserName] nvarchar(max) NOT NULL,
+    [Email] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+); | 
+2025-03-17 10:49:32.9800 | Info | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250314171852_Second', N'6.0.36'); | 
+2025-03-17 10:49:33.0413 | Info | Applying migration '20250317051744_ForeignKey'. | 
+2025-03-17 10:49:33.0579 | Info | Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Greetings] ADD [UserId] int NOT NULL DEFAULT 0; | 
+2025-03-17 10:49:33.0590 | Info | Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_Greetings_UserId] ON [Greetings] ([UserId]); | 
+2025-03-17 10:49:33.0590 | Info | Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [Greetings] ADD CONSTRAINT [FK_Greetings_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE; | 
+2025-03-17 10:49:33.0590 | Info | Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250317051744_ForeignKey', N'6.0.36'); | 
+2025-03-17 12:00:02.3813 | Info | Application Starting... | 
+2025-03-17 12:00:04.4197 | Info | User profile is available. Using 'C:\Users\Sujeet\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. | 
+2025-03-17 12:00:05.0356 | Info | Now listening on: https://localhost:7210 | 
+2025-03-17 12:00:05.0356 | Info | Now listening on: http://localhost:5224 | 
+2025-03-17 12:00:05.2524 | Info | Application started. Press Ctrl+C to shut down. | 
+2025-03-17 12:00:05.2524 | Info | Hosting environment: Development | 
+2025-03-17 12:00:05.2524 | Info | Content root path: C:\Users\Sujeet\OneDrive\Desktop\BL_Cg_API\HelloGreetingApplication\ | 
+2025-03-17 12:00:06.8442 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger - - | 
+2025-03-17 12:00:07.2698 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger - - - 301 0 - 432.6498ms | 
+2025-03-17 12:00:07.2918 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.html - - | 
+2025-03-17 12:00:07.4827 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.html - - - 200 - text/html;charset=utf-8 190.9103ms | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.css - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/_vs/browserLink - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - | 
+2025-03-17 12:00:07.5628 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/index.js - - | 
+2025-03-17 12:00:07.5628 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.js - - - 200 - application/javascript;charset=utf-8 4.0577ms | 
+2025-03-17 12:00:07.5776 | Info | Request finished HTTP/2 GET https://localhost:7210/_framework/aspnetcore-browser-refresh.js - - - 200 12379 application/javascript;+charset=utf-8 12.0251ms | 
+2025-03-17 12:00:07.6035 | Info | Sending file. Request path: '/index.css'. Physical path: 'N/A' | 
+2025-03-17 12:00:07.6091 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/index.css - - - 200 202 text/css 44.2781ms | 
+2025-03-17 12:00:07.7848 | Info | Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' | 
+2025-03-17 12:00:07.8002 | Info | Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' | 
+2025-03-17 12:00:07.8002 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-standalone-preset.js - - - 200 229223 application/javascript 239.3745ms | 
+2025-03-17 12:00:07.8099 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui.css - - - 200 154948 text/css 247.2093ms | 
+2025-03-17 12:00:07.8726 | Info | Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' | 
+2025-03-17 12:00:07.8726 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/swagger-ui-bundle.js - - - 200 1466324 application/javascript 309.0824ms | 
+2025-03-17 12:00:07.8995 | Info | Request finished HTTP/2 GET https://localhost:7210/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 333.6922ms | 
+2025-03-17 12:00:08.3490 | Info | Request starting HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - | 
+2025-03-17 12:00:08.3595 | Info | Request finished HTTP/2 GET https://localhost:7210/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.7089ms | 
+2025-03-17 12:00:08.4297 | Info | Request starting HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - | 
+2025-03-17 12:00:08.4297 | Info | Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' | 
+2025-03-17 12:00:08.4297 | Info | Request finished HTTP/2 GET https://localhost:7210/Swagger/favicon-32x32.png - - - 200 628 image/png 2.1225ms | 
